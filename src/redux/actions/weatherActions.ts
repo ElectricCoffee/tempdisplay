@@ -9,7 +9,6 @@ export const getWeather = () => {
       const response = await axios.get<OWMResponseDto>(
         `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${APIKey}&units=metric`
       );
-      console.log(response.data);
       dispatch({ type: "WEATHER_GET", payload: response.data });
     } catch (e) {
       console.error(e);
