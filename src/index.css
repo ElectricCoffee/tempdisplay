@@ -1,3 +1,15 @@
+:root {
+  --background-colour: #fffbdf;
+}
+
+html {
+  background-color: var(--background-colour);
+}
+
+#root {
+  background-color: var(--background-colour);
+}
+
 .mainCard {
   width: 600px;
   margin-top: 50px;
@@ -13,4 +25,14 @@
 
 .weather {
   font-style: italic;
+}
+
+.powered-by {
+  font-size: smaller;
+}
+
+.last-updated {
+  font-size: smaller;
+  color: gray;
+  text-align: center;
 }
