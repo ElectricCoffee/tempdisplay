@@ -9,7 +9,6 @@ function App() {
   const [time, setTime] = useState("");
   const weatherData = useAppSelector((st) => st.weather.data);
   const dispatch = useAppDispatch();
-  console.log(weatherData);
 
   const update = () => {
     setTime(moment().format("DD/MM-YYYY HH:mm"));

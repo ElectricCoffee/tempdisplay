@@ -24,6 +24,7 @@ html {
 }
 
 .weather {
+  text-transform: capitalize;
   font-style: italic;
 }
 
