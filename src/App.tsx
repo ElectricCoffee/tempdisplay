@@ -6,12 +6,10 @@ import { Card } from "react-bootstrap";
 import moment from "moment/moment";
 
 function App() {
-  const [time, setTime] = useState("");
   const weatherData = useAppSelector((st) => st.weather.data);
   const dispatch = useAppDispatch();
 
   const update = () => {
-    setTime(moment().format("DD/MM-YYYY HH:mm"));
     dispatch(getWeather());
   };
 
@@ -23,6 +21,8 @@ function App() {
     const timer = setTimeout(update, 60_000);
     return () => clearTimeout(timer);
   }, []);
+
+  const time = moment.unix(weatherData.time).format("DD/MM-YYYY HH:mm");
 
   return (
     <div>

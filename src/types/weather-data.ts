@@ -3,4 +3,5 @@ export interface WeatherData {
     weatherDescription: string,
     temperature: number,
     feelsLike: number,
+    time: number,
 }

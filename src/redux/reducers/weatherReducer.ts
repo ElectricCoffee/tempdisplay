@@ -2,7 +2,7 @@ import { OWMResponseDto } from "../../types/open-weather-map-response-dto";
 import { WeatherData } from "../../types/weather-data";
 
 interface WeatherState {
-  data?: WeatherData;
+  data: WeatherData;
 }
 
 const INIT_STATE: WeatherState = {
@@ -11,6 +11,7 @@ const INIT_STATE: WeatherState = {
     weatherDescription: "N/A",
     temperature: NaN,
     feelsLike: NaN,
+    time: 0,
   },
 };
 
@@ -29,6 +30,7 @@ export const weather = (state = INIT_STATE, action: any): WeatherState => {
         weatherDescription: weatherData.description,
         temperature: dto.main.temp,
         feelsLike: dto.main.feels_like,
+        time: dto.dt,
       };
 
       return { ...state, data };
